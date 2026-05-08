@@ -1,32 +1,15 @@
-//
-//  moonApp.swift
-//  moon
-//
-//  Created by Minh on 2026-05-07.
-//
-
 import SwiftUI
-import SwiftData
 
 @main
 struct moonApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @StateObject private var location = LocationManager()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(location)
+                .preferredColorScheme(.dark)
+                .statusBarHidden(false)
         }
-        .modelContainer(sharedModelContainer)
     }
 }
