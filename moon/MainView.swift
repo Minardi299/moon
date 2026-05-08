@@ -40,14 +40,18 @@ struct MainView: View {
                               onSettings: { showSettings = true })
                         .padding(.horizontal, 20)
                     Spacer()
+                    // The .frame here pins the layout slot for the compass.
+                    // Tweak `size` on CompassView freely — only the dial scales;
+                    // the surrounding UI stays exactly where it is.
                     CompassView(
-                        size: 340, style: style,
+                        size: 420, style: style,
                         heading: location.heading,
                         sun: sun, moon: moon, mode: m,
                         selected: selected,
                         onSunTap: { selected = .sun },
                         onMoonTap: { selected = .moon }
                     )
+                    .frame(width: 340, height: 380)
                     Spacer()
                     QuickInfo(mode: m, sun: sun, moon: moon, sunRS: rs, moonRS: mrs,
                               onSunTap: { selected = .sun },

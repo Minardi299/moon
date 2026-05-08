@@ -36,23 +36,25 @@ extension Mode {
     var palette: Palette {
         switch self {
         case .day:
+            // Brushed aluminum / titanium silver. Cooler hue, brighter top
+            // highlight, deeper bottom shadow → reads as machined metal.
             return Palette(
-                bg: Color(hex: 0xC4C6C8),
-                mid: Color(hex: 0xD2D4D6),
-                edge: Color(hex: 0x8E9092),
-                ink: Color(hex: 0x222428),
-                inkSub: Color(hex: 0x222428).opacity(0.55),
-                recessedDark: Color(hex: 0x1A1410),
-                recessedLight: Color(hex: 0xD8DADC),
-                inset: Color(hex: 0xB6B8BA),
-                groove: Color(hex: 0x707274),
-                knobTop: Color(hex: 0xE8EAEC),
-                knobMid: Color(hex: 0xB8BABC),
-                knobBot: Color(hex: 0x888A8C),
+                bg: Color(hex: 0xCED1D5),
+                mid: Color(hex: 0xE3E6E9),
+                edge: Color(hex: 0x9DA1A5),
+                ink: Color(hex: 0x1B1E22),
+                inkSub: Color(hex: 0x1B1E22).opacity(0.55),
+                recessedDark: Color(hex: 0x121418),
+                recessedLight: Color(hex: 0xD7DADD),
+                inset: Color(hex: 0xBDC1C5),
+                groove: Color(hex: 0x6C7074),
+                knobTop: Color(hex: 0xEEF1F3),
+                knobMid: Color(hex: 0xBDC1C4),
+                knobBot: Color(hex: 0x83878B),
                 accent: Color(hex: 0xE53935),
-                displayLightInk: Color(hex: 0x222428),
-                displayDarkInk: Color(hex: 0xD8DADC),
-                separator: Color(hex: 0x222428).opacity(0.12)
+                displayLightInk: Color(hex: 0x1B1E22),
+                displayDarkInk: Color(hex: 0xD7DADD),
+                separator: Color(hex: 0x1B1E22).opacity(0.12)
             )
         case .twilight:
             return Palette(
